@@ -14,16 +14,19 @@ newTodoInput.addEventListener('keypress', (e) => {
   }
 });
 
+// tehtävät muutetaan tehdyiksi
 function toggleComplete(index) {
   todos[index].completed = !todos[index].completed;
   render();
 }
 
+// poistetaan todo-listalta tehtäviä
 function deleteTodo(index) {
   todos.splice(index, 1);
   render();
 }
 
+// todo-lista
 function render() {
   todoList.innerHTML = '';
 
@@ -31,7 +34,7 @@ function render() {
     filter === 'active' ? !todo.completed :
     filter === 'completed' ? todo.completed : true
   );
-
+  // lisää listaan näkyviin tehtäviä
   filtered.forEach((todo, i) => {
     const li = document.createElement('li');
     if (todo.completed) li.classList.add('completed');
@@ -48,11 +51,12 @@ function render() {
   todoCount.textContent = `${activeCount} item${activeCount !== 1 ? 's' : ''} left`;
 }
 
+// muuttaa näppäimet All, Active, Completed musta/punainen sen mukaan, mikä niistä on aktiivinen
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     filterButtons.forEach(b => b.classList.remove('selected'));
     btn.classList.add('selected');
-    filter = btn.id.replace('filter-', '');
+    filter = btn.id.replace('filter-', ''); 
     render();
   });
 });
