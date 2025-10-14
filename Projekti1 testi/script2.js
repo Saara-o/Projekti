@@ -28,7 +28,7 @@ function deleteTodo(index) {
 
 // todo-lista
 function render() {
-  todoList.innerHTML = '';
+  todolista.innerHTML = '';
 
   const filtteröity = todos.filter(todo =>
     filter === 'aktiivi' ? !todo.completed :
