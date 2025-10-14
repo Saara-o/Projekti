@@ -1,7 +1,7 @@
 const uusitodo = document.getElementById('uusi-todo');
 const todolista = document.getElementById('todo-lista');
 const todoMr = document.getElementById('todo-maara');
-const filtteriBtn = document.querySelectorAll('.filtterien napit');
+const filtteriBtn = document.querySelectorAll('.filtterit button');
 
 let todos = [];
 let filter = 'all';
