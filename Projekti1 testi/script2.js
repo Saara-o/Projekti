@@ -48,7 +48,7 @@ function render() {
   });
 
   const aktiiviMr = todos.filter(t => !t.tehty).length;
-  todoMr.textContent = `${aktiiviMr} item${aktiiviMr !== 1 ? 's' : ''} left`;
+  todoMr.textContent = `${aktiiviMr} tehtävä${aktiiviMr !== 1 ? 'ä' : ''} jäljellä`;
 }
 
 // muuttaa näppäimet All, Active, Completed musta/punainen sen mukaan, mikä niistä on aktiivinen
