@@ -1,0 +1,85 @@
+body {
+  font-family:'Lucida Grande';
+  background: #aae1eb;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.todoapp {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  width: 700px;
+  border-radius: 4px;
+  padding: 5rem;
+}
+
+h1 {
+  text-align: center;
+  color: #17a2e2;
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.uusi-todo {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-style: lucida;
+  color: #777;
+}
+
+.todo-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-lista li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-lista li.tehty span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.todo-lista button {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #17a2e2;
+  cursor: pointer;
+}
+
+.todo-lista button:hover {
+  color: #17a2e2;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.filtterit button {
+  margin-left: 5px;
+  border: 1px solid transparent;
+  background: none;
+  cursor: pointer;
+}
+
+.filtterit .selected {
+  border: 1px solid #17a2e2;
+  border-radius: 3px;
+  color: #17a2e2;
+}
