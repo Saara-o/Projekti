@@ -16,7 +16,7 @@ uusitodo.addEventListener('keypress', (e) => {
 
 // tehtävät muutetaan tehdyiksi
 function toggleComplete(index) {
-  todos[index].completed = !todos[index].completed;
+  todos[index].tehty = !todos[index].tehty;
   render();
 }
 
@@ -31,23 +31,23 @@ function render() {
   todolista.innerHTML = '';
 
   const filtteröity = todos.filter(todo =>
-    filter === 'aktiivi' ? !todo.completed :
-    filter === 'tehty' ? todo.completed : true
+    filter === 'aktiivi' ? !todo.tehty :
+    filter === 'tehty' ? todo.tehty : true
   );
   // lisää listaan näkyviin tehtäviä
   filtteröity.forEach((todo, i) => {
     const li = document.createElement('li');
-    if (todo.completed) li.classList.add('tehty');
+    if (todo.tehty) li.classList.add('tehty');
 
     li.innerHTML = `
-      <input type="checkbox" ${todo.completed ? 'checked' : ''} onclick="toggleComplete(${i})">
+      <input type="checkbox" ${todo.tehty ? 'checked' : ''} onclick="toggleComplete(${i})">
       <span>${todo.text}</span>
       <button onclick="deleteTodo(${i})">×</button>
     `;
     todolista.appendChild(li);
   });
 
-  const aktiiviMr = todos.filter(t => !t.completed).length;
+  const aktiiviMr = todos.filter(t => !t.tehty).length;
   todoMr.textContent = `${aktiiviMr} item${aktiiviMr !== 1 ? 's' : ''} left`;
 }
 
